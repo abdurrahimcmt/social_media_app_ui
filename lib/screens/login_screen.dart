@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app_ui/screens/home_screen.dart';
 import 'package:social_media_app_ui/widgets/curve_clipper.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -73,7 +74,12 @@ class LoginScreen extends StatelessWidget {
                 height: 45,
                 width: screenWidth * 0.7,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => HomeScreen(),
+                    ),
+                  ),
                   child: const Text(
                     'Login',
                     style: TextStyle(
