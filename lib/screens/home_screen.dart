@@ -86,7 +86,7 @@ class _HomeScreenState extends State<HomeScreen>
                       return GestureDetector(
                         onTap: () {},
                         child: BuildCircleImage(
-                          user: user,
+                          image: user.profileImageUrl,
                         ),
                       );
                     },

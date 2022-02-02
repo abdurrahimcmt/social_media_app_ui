@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_app_ui/models/user_model.dart';
 
 class BuildCircleImage extends StatelessWidget {
-  final User user;
-  const BuildCircleImage({Key? key, required this.user}) : super(key: key);
+  final String image;
+  const BuildCircleImage({Key? key, required this.image}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -24,7 +23,7 @@ class BuildCircleImage extends StatelessWidget {
           radius: 30,
           child: CircleAvatar(
             radius: 28.0,
-            backgroundImage: AssetImage(user.profileImageUrl),
+            backgroundImage: AssetImage(image),
           ),
         ),
       ),
