@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:social_media_app_ui/data/data.dart';
 import 'package:social_media_app_ui/models/user_model.dart';
 import 'package:social_media_app_ui/widgets/build_circleimage.dart';
+import 'package:social_media_app_ui/widgets/post_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,10 +15,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late PageController _pageController;
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(
+      length: 2,
+      vsync: this,
+    );
+    _pageController = PageController(
+      initialPage: 0,
+      viewportFraction: 0.8,
+    );
   }
 
   @override
@@ -95,6 +104,8 @@ class _HomeScreenState extends State<HomeScreen>
               ),
             ],
           ),
+          PostCarousel(
+              pageController: _pageController, title: 'Posts', posts: posts),
         ],
       ),
     );
