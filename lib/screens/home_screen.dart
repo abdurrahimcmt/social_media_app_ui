@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:social_media_app_ui/data/data.dart';
+import 'package:social_media_app_ui/models/user_model.dart';
+import 'package:social_media_app_ui/widgets/build_circleimage.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -38,15 +41,15 @@ class _HomeScreenState extends State<HomeScreen>
         bottom: TabBar(
           controller: _tabController,
           labelColor: Theme.of(context).primaryColor,
-          labelStyle: TextStyle(
+          labelStyle: const TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.w600,
           ),
-          unselectedLabelStyle: TextStyle(
+          unselectedLabelStyle: const TextStyle(
             fontSize: 18.0,
             fontWeight: FontWeight.w600,
           ),
-          tabs: <Widget>[
+          tabs: const <Widget>[
             Tab(
               text: 'Trending',
             ),
@@ -55,6 +58,44 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ],
         ),
+      ),
+      body: ListView(
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10),
+                child: Text(
+                  'Following',
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: SizedBox(
+                  height: 80.0,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: users.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      User user = users[index];
+                      return GestureDetector(
+                        onTap: () {},
+                        child: BuildCircleImage(
+                          user: user,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
