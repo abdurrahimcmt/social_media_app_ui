@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:social_media_app_ui/data/data.dart';
 import 'package:social_media_app_ui/models/user_model.dart';
 import 'package:social_media_app_ui/widgets/build_circleimage.dart';
+import 'package:social_media_app_ui/widgets/custom_drawer.dart';
 import 'package:social_media_app_ui/widgets/post_carousel.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -68,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen>
           ],
         ),
       ),
+      drawer: const CustomDrawer(),
       body: ListView(
         children: [
           Column(
@@ -96,6 +98,7 @@ class _HomeScreenState extends State<HomeScreen>
                         onTap: () {},
                         child: BuildCircleImage(
                           image: user.profileImageUrl,
+                          radius: 28.0,
                         ),
                       );
                     },

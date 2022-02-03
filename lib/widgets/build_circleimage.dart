@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class BuildCircleImage extends StatelessWidget {
   final String image;
-  const BuildCircleImage({Key? key, required this.image}) : super(key: key);
+  final double radius;
+  const BuildCircleImage({Key? key, required this.image, required this.radius})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,9 +22,9 @@ class BuildCircleImage extends StatelessWidget {
         ),
         child: CircleAvatar(
           backgroundColor: Theme.of(context).primaryColor,
-          radius: 30,
+          radius: radius + 2,
           child: CircleAvatar(
-            radius: 28.0,
+            radius: radius,
             backgroundImage: AssetImage(image),
           ),
         ),
