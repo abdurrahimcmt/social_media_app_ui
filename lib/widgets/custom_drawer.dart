@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:social_media_app_ui/data/data.dart';
 import 'package:social_media_app_ui/screens/home_screen.dart';
 import 'package:social_media_app_ui/screens/login_screen.dart';
+import 'package:social_media_app_ui/screens/profile_screen.dart';
 import 'package:social_media_app_ui/widgets/build_circleimage.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -43,6 +44,7 @@ class CustomDrawer extends StatelessWidget {
                     BuildCircleImage(
                       image: currentUser.profileImageUrl,
                       radius: 50,
+                      border: 2.0,
                     ),
                     const SizedBox(
                       width: 10.0,
@@ -83,7 +85,14 @@ class CustomDrawer extends StatelessWidget {
           _buildDrawerOption(
             const Icon(Icons.account_circle),
             'Your Profile',
-            () {},
+            () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ProfileScreen(
+                  user: currentUser,
+                ),
+              ),
+            ),
           ),
           _buildDrawerOption(
             const Icon(Icons.settings),

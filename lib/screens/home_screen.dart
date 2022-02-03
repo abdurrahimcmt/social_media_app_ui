@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:social_media_app_ui/data/data.dart';
 import 'package:social_media_app_ui/models/user_model.dart';
 import 'package:social_media_app_ui/widgets/build_circleimage.dart';
@@ -99,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen>
                         child: BuildCircleImage(
                           image: user.profileImageUrl,
                           radius: 28.0,
+                          border: 2,
                         ),
                       );
                     },
