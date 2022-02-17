@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 
 import 'package:social_media_app_ui/models/user_model.dart';
 import 'package:social_media_app_ui/widgets/build_circleimage.dart';
 import 'package:social_media_app_ui/widgets/custom_drawer.dart';
-import 'package:social_media_app_ui/widgets/post_carousel.dart';
-=======
-import 'package:social_media_app_ui/models/user_model.dart';
-import 'package:social_media_app_ui/widgets/build_circleimage.dart';
-import 'package:social_media_app_ui/widgets/custom_drawer.dart';
->>>>>>> 0664410b219039a802824f580f903178f207d830
+
 import 'package:social_media_app_ui/widgets/profile_clipper.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -26,25 +20,6 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
-<<<<<<< HEAD
-  late PageController _postPageController;
-  late PageController _favoritesPageController;
-  @override
-  void initState() {
-    super.initState();
-
-    _postPageController = PageController(
-      initialPage: 0,
-      viewportFraction: 0.8,
-    );
-    _favoritesPageController = PageController(
-      initialPage: 0,
-      viewportFraction: 0.8,
-    );
-  }
-
-=======
->>>>>>> 0664410b219039a802824f580f903178f207d830
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -145,22 +120,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-<<<<<<< HEAD
-            PostCarousel(
-              pageController: _postPageController,
-              title: 'Your Posts',
-              posts: widget.user.posts,
-            ),
-            PostCarousel(
-              pageController: _favoritesPageController,
-              title: 'Favorites',
-              posts: widget.user.favorites,
-            ),
-            const SizedBox(
-              height: 50.0,
-            ),
-=======
->>>>>>> 0664410b219039a802824f580f903178f207d830
           ],
         ),
       ),
