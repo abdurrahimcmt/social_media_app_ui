@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app_ui/screens/home_screen.dart';
+import 'package:social_media_app_ui/widgets/curve_clipper.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -13,11 +15,14 @@ class LoginScreen extends StatelessWidget {
           height: screenHight,
           child: Column(
             children: [
-              Image(
-                height: screenHight / 2.5,
-                width: screenWidth,
-                image: const AssetImage('assets/images/login_background.jpg'),
-                fit: BoxFit.cover,
+              ClipPath(
+                clipper: CurveClipper(),
+                child: Image(
+                  height: screenHight / 2.5,
+                  width: screenWidth,
+                  image: const AssetImage('assets/images/login_background.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
               Text(
                 'HANGOUTS',
@@ -69,7 +74,12 @@ class LoginScreen extends StatelessWidget {
                 height: 45,
                 width: screenWidth * 0.7,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => const HomeScreen(),
+                    ),
+                  ),
                   child: const Text(
                     'Login',
                     style: TextStyle(
